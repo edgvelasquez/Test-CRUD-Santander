@@ -1,0 +1,6 @@
+<div class="container">
+  <app-productolist (eventSetProducto)="producto=$event" (eventSetProductos)="productos=$event"></app-productolist>
+</div>
+<app-productoformadd [producto]="producto" [productos]="productos"></app-productoformadd>
+<app-productoformupdate [producto]="producto" [productos]="productos"></app-productoformupdate>
+<app-productoformdelete [producto]="producto" [productos]="productos"></app-productoformdelete>

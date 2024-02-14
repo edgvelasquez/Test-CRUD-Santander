@@ -1,0 +1,55 @@
+<!-- Edit Modal HTML -->
+<div id="editEmployeeModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup]="formEdit" (ngSubmit)="editar()">
+        <div class="modal-header">
+          <h4 class="modal-title">Actualizar Producto</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="hidden" class="form-control" formControlName="_id" required [value]="formEdit.value._id">
+            <input type="text" class="form-control" formControlName="name" required [value]="formEdit.value.name">
+            <div class="alert alert-danger" [hidden]="formEdit.get('name')?.valid || formEdit.get('name')?.pristine">
+              Campo obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Price</label>
+            <input type="number" class="form-control" formControlName="price" required [value]="formEdit.value.price">
+            <div class="alert alert-danger" [hidden]="formEdit.get('price')?.valid || formEdit.get('price')?.pristine">
+              Campo obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" formControlName="description" required [value]="formEdit.value.description">
+            <div class="alert alert-danger" [hidden]="formEdit.get('description')?.valid || formEdit.get('description')?.pristine">
+              Campo obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mail</label>
+            <input type="email" class="form-control" formControlName="mail" required [value]="formEdit.value.mail">
+            <div class="alert alert-danger" [hidden]="formEdit.get('mail')?.valid || formEdit.get('mail')?.pristine">
+              Campo obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Fecha</label>
+            <input type="date" class="form-control" formControlName="fecha" required [value]="formEdit.value.fecha">
+            <div class="alert alert-danger" [hidden]="formEdit.get('fecha')?.valid || formEdit.get('fecha')?.pristine">
+              Campo obligatorio
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar" id="btnCloseFormUpdate">
+          <input type="submit" class="btn btn-success" value="Actualizar">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

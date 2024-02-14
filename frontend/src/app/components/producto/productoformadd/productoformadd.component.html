@@ -1,0 +1,54 @@
+<!-- Add Modal HTML -->
+<div id="addEmployeeModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup]="formAdd" (ngSubmit)="crear()">
+        <div class="modal-header">
+          <h4 class="modal-title">Agregar Producto</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="name" required>
+            <div class="alert alert-danger" [hidden]="formAdd.get('name')?.valid || formAdd.get('name')?.pristine">
+              Campo obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Price</label>
+            <input type="number" class="form-control" formControlName="price" required>
+            <div class="alert alert-danger" [hidden]="formAdd.get('price')?.valid || formAdd.get('price')?.pristine">
+              Campo obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" formControlName="description" required>
+            <div class="alert alert-danger" [hidden]="formAdd.get('description')?.valid || formAdd.get('description')?.pristine">
+              Campo obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mail</label>
+            <input type="email" class="form-control" formControlName="mail" required>
+            <div class="alert alert-danger" [hidden]="formAdd.get('mail')?.valid || formAdd.get('mail')?.pristine">
+              Campo obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Fecha</label>
+            <input type="date" class="form-control" formControlName="fecha" required>
+            <div class="alert alert-danger" [hidden]="formAdd.get('fecha')?.valid || formAdd.get('fecha')?.pristine">
+              Campo obligatorio
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+          <input type="submit" class="btn btn-success" value="Agregar">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

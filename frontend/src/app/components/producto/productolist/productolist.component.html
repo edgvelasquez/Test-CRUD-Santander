@@ -1,0 +1,38 @@
+<div class="table-wrapper">
+  <div class="table-title">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>CRUD<b>Productos</b></h2>
+      </div>
+      <div class="col-sm-6">
+        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar Producto</span></a>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Mail</th>
+      <th>Fecha</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (producto of productos;track producto._id){
+    <tr>
+      <td>{{producto.name}}</td>
+      <td>{{formatCurrency(producto.price,'en-US','$',"CLP").replace(",",".")}}</td>
+      <td>{{producto.description}}</td>
+      <td>{{producto.mail}}</td>
+      <td>{{producto.fecha.toString().substring(0,10)}}</td>
+      <td>
+        <a href="#editEmployeeModal" (click)="editar(producto)" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+        <a href="#deleteEmployeeModal" (click)="eliminar(producto)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+      </td>
+    </tr>
+      }
+    </tbody>
+  </table>
+</div>
