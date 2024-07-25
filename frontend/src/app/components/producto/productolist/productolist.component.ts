@@ -23,6 +23,7 @@ export class ProductolistComponent implements OnInit{
       this.productoService.getProducts().subscribe(productos => {
         this.productos = productos;
         this.eventSetProductos.emit(this.productos);
+        console.log(this.productos);
       });
   }
   eliminar(producto:any) {
