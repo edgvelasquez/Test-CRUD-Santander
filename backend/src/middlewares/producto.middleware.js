@@ -5,6 +5,7 @@ const verifyRequest=async (err,req,res,next)=>{
         }
         next();
     }catch(e){
+        return res.status(400).send({ status: 404, message: e.message }); // Bad request
     }
 }
 module.exports=verifyRequest
